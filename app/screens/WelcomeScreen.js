@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
-import { View, ImageBackground, StyleSheet, Text, Image, Font } from 'react-native';
+import { View, ImageBackground, StyleSheet, Text, Image } from 'react-native';
+import * as Font from 'expo-font';
 
 import colors from '../config/colors.js'
 
 function WelcomeScreen(props) {
   useEffect(() => {
-    Font.loadAsync({
-      'Plavsky': require('../assets/fonts/Plavsky.otf'),
-    });
+    const loadFonts = async () => {
+      await Font.loadAsync({
+        'Plavsky': require('../assets/fonts/Plavsky.otf'),
+      });
+    };
+
+    loadFonts();
   }, []);
 
   return (
@@ -15,14 +20,16 @@ function WelcomeScreen(props) {
       style={styles.background}
       source={require('../assets/background.jpg')}
     >
+
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require('../assets/gundam-logo.webp')}/>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title} >WokkieTalkie</Text>
-        </View>
       </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>WokkieTalkie</Text>
+        </View>
       <View style={styles.loginButton}><Text>Log In</Text></View>
       <View style={styles.registerButton}><Text>Register</Text></View>
+
     </ImageBackground>
   );
 }
@@ -54,10 +61,10 @@ const styles = StyleSheet.create({
   logoContainer: {
     position: 'absolute',
     top: 70,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
-    font: 'Plavsky',
+    fontFamily: 'Plavsky',
     color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
