@@ -8,9 +8,9 @@ import ChatListScreen from './app/screens/ChatListScreen'
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <WelcomeScreen /> */}
+      <WelcomeScreen />
+      {/* <ChatListScreen /> */}
       {/* <ViewImageScreen /> */}
-      <ChatListScreen />
     </SafeAreaView>
   );
 }

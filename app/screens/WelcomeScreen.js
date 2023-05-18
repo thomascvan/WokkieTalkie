@@ -11,7 +11,9 @@ function WelcomeScreen(props) {
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require('../assets/gundam-logo.webp')}/>
-        <Text>WokkieTalkie</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} >WokkieTalkie</Text>
+        </View>
       </View>
       <View style={styles.loginButton}><Text>Log In</Text></View>
       <View style={styles.registerButton}><Text>Register</Text></View>
@@ -47,6 +49,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 70,
     alignItems: 'center'
+  },
+  title: {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  titleContainer: {
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    padding: 10,
+    borderRadius: 10,
   }
 })
 
