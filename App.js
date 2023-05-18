@@ -3,12 +3,14 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Alert,
 
 import WelcomeScreen from './app/screens/WelcomeScreen'
 import ViewImageScreen from './app/screens/ViewImageScreen'
+import ChatListScreen from './app/screens/ChatListScreen'
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
       {/* <ViewImageScreen /> */}
+      <ChatListScreen />
     </SafeAreaView>
   );
 }
