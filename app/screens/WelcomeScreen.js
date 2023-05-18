@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ImageBackground, StyleSheet, Text, Image } from 'react-native';
+
 import colors from '../config/colors.js'
 
 function WelcomeScreen(props) {
