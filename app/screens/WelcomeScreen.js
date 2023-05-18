@@ -1,9 +1,15 @@
-import React from 'react';
-import { View, ImageBackground, StyleSheet, Text, Image } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, ImageBackground, StyleSheet, Text, Image, Font } from 'react-native';
 
 import colors from '../config/colors.js'
 
 function WelcomeScreen(props) {
+  useEffect(() => {
+    Font.loadAsync({
+      'Plavsky': require('../assets/fonts/Plavsky.otf'),
+    });
+  }, []);
+
   return (
     <ImageBackground
       style={styles.background}
@@ -51,6 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
+    font: 'Plavsky',
     color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
